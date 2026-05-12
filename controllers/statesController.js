@@ -34,10 +34,14 @@ const getState = async (req, res) => {
     });
   }
 
-  return res.json({
-    ...state,
-    funfacts: []
-  });
+  if (req.code === 'RI') {
+    return res.json({
+      ...state,
+      funfacts: []
+    });
+  }
+
+  res.json(state);
 };
 
 const getCapital = async (req, res) => {
