@@ -94,13 +94,7 @@ const getFunfact = async (req, res) => {
     funfact: mongoState.funfacts[randomIndex]
   });
 };
-    const randomIndex = Math.floor(Math.random() * mongoState.funfacts.length);
-  
-    res.json({
-      funfact: mongoState.funfacts[randomIndex]
-    });
-  };
-
+   
   const createFunfacts = async (req, res) => {
     if (!req.body.funfacts) {
       return res.status(400).json({
